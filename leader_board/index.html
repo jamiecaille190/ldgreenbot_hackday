@@ -22,19 +22,14 @@
 <script>
     $(document).ready(function () {
         
-        // $.ajax({
-        //     url: "", // ToDo: Add Url 
-        //     type: 'GET',
-        //     success: function (res) {
-        //         console.log(res);
-        //         parseResponse(res)
-        //     }
-        // })
-
-        var res = "{\"users\":[{\"name\":\"Harsh\",\"score\":\"9000\"},{\"name\":\"David\",\"score\":\"8000\"}]}"
-        parseResponse(res)
-
-
+        $.ajax({
+            url: "https://{uuid}.ngrok.io/leaderboards", // Note: Must edit UUID of ngrok everytime the server starts up
+            type: 'GET',
+            success: function (res) {
+                console.log(res);
+                parseResponse(res)
+            }
+        })
     })
 
     function parseResponse(res){
